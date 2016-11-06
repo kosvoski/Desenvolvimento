@@ -1,0 +1,88 @@
+﻿@model WebApplication.Funcionario
+
+@{
+    ViewBag.Title = "Detalhe";
+}
+
+<h2>Dados do funcionário</h2>
+
+<h4>Detalhe</h4>
+<hr /> 
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-7">
+            <dl class="dl-horizontal">
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.nome_completo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.nome_completo)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.telefone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.telefone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.endereco)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.endereco)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cidade)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cidade)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cep)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cep)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.salario)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.salario)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.descricao_cargo)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.descricao_cargo)
+                </dd>
+                <dd>
+                     <a href="@Url.Action("", "Funcionario")" class="btn btn-default" role="button">
+                         <span>Voltar</span>
+                     </a>
+                     <a href="@Url.Action("Edit", "Funcionario",  new { id = Model.id })" class="btn btn-info" role="button">
+                         <span>Editar</span>
+                     </a>                
+                </dd>
+            </dl>            
+        </div>
+        <div class="col-md-5">
+            <img src="@Model.foto" class="img-responsive" alt="Sem Imagem">
+        </div>
+    </div>
+</div> 
+
+

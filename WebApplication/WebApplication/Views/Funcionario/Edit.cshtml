@@ -1,0 +1,128 @@
+﻿@model WebApplication.Funcionario
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar funcionário</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Cadastro</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+         
+        <div class="col-md-12">       
+            <div class="col-md-7">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.nome_completo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.nome_completo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.nome_completo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.telefone, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.telefone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.telefone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.endereco, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.endereco, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cidade, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.cidade, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cidade, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cep, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.cep, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cep, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.salario, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.salario, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.salario, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.descricao_cargo, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.TextAreaFor(model => model.descricao_cargo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.descricao_cargo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3  col-md-9">
+                        @Html.CheckBoxFor(Model => Model.deleteFoto, new { id = Html.NameFor(Model => Model.deleteFoto) })
+                        <label for="@Html.NameFor(Model => Model.deleteFoto)">Selecione para Remover a Foto</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.foto, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        <input id="ImagePath" title="Selecione a foto" type="file" name="file" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+
+                        <a href="@Url.Action("", "Funcionario")" class="btn btn-default" role="button">
+                            <span>Voltar</span>
+                        </a>
+                        <input type="submit" value="Salvar" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <img src="@Model.foto" class="img-responsive" alt="Sem Imagem">
+            </div>
+        </div>
+                
+    </div>
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function ()
+        {
+            Globalize.culture('pt-BR');
+            $("#telefone").inputmask("## #### ####", { jitMasking: true });
+
+            $("#cep").inputmask("#####-###", { jitMasking: true });
+
+            $("#salario").inputmask('decimal', {
+                'alias': "currency",
+                'prefix': '',
+                'radixPoint': ',',
+                'autoGroup': false,
+                'digits': 2,
+            });
+        });
+    </script>
+}

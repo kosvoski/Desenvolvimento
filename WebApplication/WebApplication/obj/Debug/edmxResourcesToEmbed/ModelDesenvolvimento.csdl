@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="desenvolvimentoContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="desenvolvimentoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Funcionario" EntityType="desenvolvimentoContext.Funcionario" />
+  </EntityContainer>
+  <EntityType Name="Funcionario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="foto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nome_completo" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="endereco" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cidade" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="descricao_cargo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="salario" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="cep" Type="String" MaxLength="9" FixedLength="true" Unicode="true" />
+    <Property Name="telefone" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
