@@ -8,3 +8,6 @@ C:\Users\leo\Documents\Visual Studio 2015\Projects\Solution\WindowsFormsApplicat
 C:\Users\leo\Documents\Visual Studio 2015\Projects\Solution\WindowsFormsApplication\WindowsFormsApplication\bin\Debug\WindowsFormsApplication.pdb
 C:\Users\leo\Documents\Visual Studio 2015\Projects\Solution\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.exe
 C:\Users\leo\Documents\Visual Studio 2015\Projects\Solution\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.pdb
+D:\Dev\Desenvolvimento\WindowsFormsApplication\WindowsFormsApplication\bin\Debug\WindowsFormsApplication.exe.config
+D:\Dev\Desenvolvimento\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.exe
+D:\Dev\Desenvolvimento\WindowsFormsApplication\WindowsFormsApplication\obj\Debug\WindowsFormsApplication.pdb
